@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class Playermovments : MonoBehaviour
@@ -5,25 +6,33 @@ public class Playermovments : MonoBehaviour
     public GameObject LeftLane;
     public GameObject RightLane;
     public GameObject Middlelane;
+    public float jumppower = 3;
 
-    public float LeftPos;
-    public float MiddlePos;
-    public float RightPos;
-    public bool PlayerPos;
+    public float playerpos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey(KeyCode.A))
+       
+        if (Input.GetKeyDown(KeyCode.A))
         {
-
+            transform.position = LeftLane.transform.position;
+           
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            transform.position = Middlelane.transform.position;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            transform.position = RightLane.transform.position;
         }
     }
+
 }

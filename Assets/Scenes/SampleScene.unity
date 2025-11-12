@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 348510515}
   - component: {fileID: 348510514}
   - component: {fileID: 348510513}
+  - component: {fileID: 348510518}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -502,6 +503,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &348510518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348510512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1d7dd957a615c418676fa48a485014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftLane: {fileID: 1563897019}
+  RightLane: {fileID: 2035097939}
+  Middlelane: {fileID: 1114018087}
+  jumppower: 3
+  playerpos: 0
 --- !u!1 &381541200
 GameObject:
   m_ObjectHideFlags: 0
