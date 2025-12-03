@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 0}
   Points: 0
-  Movemnetspeed: 5
+  Movemnetspeed: 8
   IsDestroyed: 0
   health: {fileID: 0}
 --- !u!54 &7254052384689933407

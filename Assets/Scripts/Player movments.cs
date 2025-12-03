@@ -31,7 +31,7 @@ public class Playermovments : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             transform.position += Vector3.up * jumppower * Time.deltaTime;
         }
