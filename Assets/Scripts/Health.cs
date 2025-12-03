@@ -17,6 +17,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Healthy.text = "Boss Health: 100" + Mathf.Round(Points).ToString();
+        Healthy.text = "Boss Health: " + Mathf.Round(Points).ToString();
     }
 }
