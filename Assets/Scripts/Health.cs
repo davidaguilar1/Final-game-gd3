@@ -21,17 +21,9 @@ public class Health : MonoBehaviour
     void Update()
     {
         Healthy.text = "Boss Health: " + Mathf.Round(Points).ToString();
-       if(Points == -10)
-        {
-            
-            IsWin = true;
-            //StartCoroutine(Win());
-        }
+       
     }
 
-   // private IEnumerator Win()
-    //{
-     //   Debug.Log("Started");
-   // }
+
     
 }
