@@ -30,7 +30,7 @@ public class Notecript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject.CompareTag("Note"))
+        if (gameObject.CompareTag("Player"))
         {
             IsDestroyed = true;
             Destroy(gameObject);
