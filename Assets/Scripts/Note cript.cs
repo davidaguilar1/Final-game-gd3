@@ -13,12 +13,12 @@ public class Notecript : MonoBehaviour
     public bool IsDestroyed = false;
     
     public Health health;
-
+    public Health Combo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health= FindFirstObjectByType<Health>();
-        
+        Combo= FindFirstObjectByType<Health>();
     }
 
    
@@ -35,6 +35,7 @@ public class Notecript : MonoBehaviour
             IsDestroyed = true;
             Destroy(gameObject);
             health.Points -= 1;
+            Combo.Score += 1;
         }
     }
 }

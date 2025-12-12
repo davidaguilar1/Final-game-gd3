@@ -9,8 +9,10 @@ public class Health : MonoBehaviour
 {
 
     public TMP_Text Healthy;
+    public TMP_Text Combotext;
     public Slider slider;
     public int Points;
+    public int Score;
     public bool IsWin;
     public GameObject note;
     
@@ -20,12 +22,14 @@ public class Health : MonoBehaviour
         IsWin = false;
         slider.value = Points;
         Points = 100;
+        Score= 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Healthy.text = "Boss Health: " + Mathf.Round(Points).ToString();
+        Healthy.text = "HP: " + Mathf.Round(Points).ToString();
+        Combotext.text = "Combo " + Mathf.Round(Score).ToString();
         slider.value = Points/ 100f;
     }
 
