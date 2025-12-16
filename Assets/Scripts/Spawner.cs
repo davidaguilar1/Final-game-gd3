@@ -35,10 +35,10 @@ public class Spawner : MonoBehaviour
         if (timer >= SpawnRate)
         {
             timer = 0f;
-            Instantiate(Square, transform.position, transform.rotation);
+            Instantiate(Square, transform.position, transform.rotation, transform);
             SpawnRate = Random.Range(MinSpawnInterval, MaxSpawnInterval);
         }
-        if( HP.Points <= 99 && !hasRunBelow50)
+        if( HP.Points <= 50 && !hasRunBelow50)
         {
             Debug.Log("Below 50");
             StartCoroutine(Below50());
@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
         Debug.Log("Above 50");
         foreach (Notecript note in holder)
         {
-            note.gameObject.SetActive(true);
+            Destroy(note.gameObject);
         }
         
         Move.Movemnetspeed = 15;
