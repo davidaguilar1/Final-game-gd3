@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Miss : MonoBehaviour
@@ -6,6 +5,7 @@ public class Miss : MonoBehaviour
     public PlayerHealth PlayHP;
     public Health Combos;
     public GameObject Note;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,11 +16,12 @@ public class Miss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
     }
     private void OnTriggerEnter(Collider other)
     {
        PlayHP.PlayerHealthPoints -= 1;
+        
         Combos.Score = 0;
         Destroy(Note);
         

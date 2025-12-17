@@ -8,7 +8,7 @@ public class Notecript : MonoBehaviour
 
     public TMP_Text Health;
    
-    public float Movemnetspeed = 10;
+    public float Movementspeed;
   
     public bool IsDestroyed = false;
     
@@ -19,13 +19,14 @@ public class Notecript : MonoBehaviour
     {
         health= FindFirstObjectByType<Health>();
         Combo= FindFirstObjectByType<Health>();
+        Movementspeed = 20f;
     }
 
    
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.back * Movemnetspeed * Time.deltaTime;
+        transform.position += Vector3.back * Movementspeed * Time.deltaTime;
        
     }
     private void OnCollisionEnter(Collision collision)

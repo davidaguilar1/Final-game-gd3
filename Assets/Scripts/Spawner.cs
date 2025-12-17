@@ -33,6 +33,7 @@ public class Spawner : MonoBehaviour
         HP = FindAnyObjectByType<Health>();
         SpawnRate = Random.Range(MinSpawnInterval, MaxSpawnInterval);
         below50.enabled = false;
+    
       Bossmusic.Stop();
         Normal.Play();
     }
@@ -53,7 +54,7 @@ public class Spawner : MonoBehaviour
             StartCoroutine(Below50());
             hasRunBelow50 = true;
         }
-        
+       
     }
     
     private IEnumerator Below50()
@@ -82,7 +83,7 @@ public class Spawner : MonoBehaviour
             Destroy(note.gameObject);
         }
         
-        Move.Movemnetspeed = 40;
+        Move.Movementspeed = 40;
         MaxSpawnInterval = 2;
     }
 }

@@ -191,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 454, y: 281}
+  m_AnchoredPosition: {x: 438, y: 320}
   m_SizeDelta: {x: 225.5386, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291908275
@@ -901,7 +901,6 @@ RectTransform:
   - {fileID: 291908274}
   - {fileID: 454543561}
   - {fileID: 1824336762}
-  - {fileID: 883009498}
   - {fileID: 1853214500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -925,10 +924,11 @@ MonoBehaviour:
   Healthy: {fileID: 863945604}
   Combotext: {fileID: 1139002431}
   slider: {fileID: 291908275}
-  Points: 100
+  Points: 10
   Score: 0
   IsWin: 0
   note: {fileID: 8255262599050063839, guid: bf753343957650b4d97501d56c72b775, type: 3}
+  HighCombo: 0
 --- !u!114 &431683737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,12 +941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f03e4928618de945a74b10a29890acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Healthy: {fileID: 1645031062}
-  slider: {fileID: 454543562}
-  PlayerHP: 0
-  Score: 0
-  IsWin: 0
-  note: {fileID: 1783375440047409774, guid: dc12a69ecd524d54db4b2beff7bc2bf3, type: 3}
 --- !u!1 &454543560
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +952,7 @@ GameObject:
   - component: {fileID: 454543561}
   - component: {fileID: 454543562}
   - component: {fileID: 454543563}
+  - component: {fileID: 454543564}
   m_Layer: 5
   m_Name: Player Healthbar
   m_TagString: Untagged
@@ -982,11 +977,12 @@ RectTransform:
   - {fileID: 2128095268}
   - {fileID: 1751862440}
   - {fileID: 1645031061}
+  - {fileID: 883009498}
   m_Father: {fileID: 431683735}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354, y: 281}
+  m_AnchoredPosition: {x: -438, y: 320}
   m_SizeDelta: {x: 225.5386, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454543562
@@ -1055,7 +1051,104 @@ MonoBehaviour:
   PlayerHP: {fileID: 454543562}
   Playerhealth: {fileID: 1645031062}
   PlayerHealthPoints: 0
-  below5: {fileID: 0}
+  below5: {fileID: 454543564}
+--- !u!82 &454543564
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454543560}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 26dae102f4ccbf841a074f80efd44a6a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.018554688
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &548880568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1684,16 +1777,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883009497}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1840456, y: 0.26795638, z: 1.1840456}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 431683735}
+  m_Father: {fileID: 454543561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -502, y: 252}
+  m_AnchoredPosition: {x: -175.23868, y: -7.7707825}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883009499
@@ -2790,7 +2883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -448, y: 104}
+  m_AnchoredPosition: {x: -515, y: 104}
   m_SizeDelta: {x: 243.2555, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853214501
@@ -3099,7 +3192,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 778899af916497c4e9decd6e94df2d5b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3196,7 +3289,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 8d6d951e01244ef4eb753073d605ea4e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

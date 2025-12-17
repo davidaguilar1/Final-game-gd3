@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     {
         PlayerHealthPoints = 10;
         PlayerHP.value = PlayerHealthPoints;
+        below5.Stop();
     }
 
     // Update is called once per frame
@@ -26,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
         if(PlayerHealthPoints <= 5)
         {
             StartCoroutine(Below5());
+        }
+        if (PlayerHealthPoints <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
     private IEnumerator Below5()
