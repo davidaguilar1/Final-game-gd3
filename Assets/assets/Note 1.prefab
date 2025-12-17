@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7955467183378512986}
   m_Layer: 0
   m_Name: Note 1
-  m_TagString: Player
+  m_TagString: Note
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,9 +123,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 0}
-  Movemnetspeed: 20
+  Movemnetspeed: 40
   IsDestroyed: 0
   health: {fileID: 0}
+  Combo: {fileID: 0}
 --- !u!54 &7955467183378512986
 Rigidbody:
   m_ObjectHideFlags: 0

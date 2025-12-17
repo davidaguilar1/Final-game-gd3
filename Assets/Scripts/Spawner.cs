@@ -9,6 +9,8 @@ using NUnit.Framework;
 public class Spawner : MonoBehaviour
 {
     public Shader water;
+    public AudioSource Bossmusic;
+    public AudioSource Normal;
     public GameObject Square;
     public Health HP;
     public Notecript Move;
@@ -19,13 +21,20 @@ public class Spawner : MonoBehaviour
     public TMP_Text below50;
     public Health IsWin;
     private bool hasRunBelow50 = false;
+
+    public static bool didChangeWater;
+    public static bool didmusicplay;
+    //material handling
+    public MeshRenderer waterMesh;
+    public Material normalMaterial, scaryMaterial;
     void Start()
     {
         
         HP = FindAnyObjectByType<Health>();
         SpawnRate = Random.Range(MinSpawnInterval, MaxSpawnInterval);
         below50.enabled = false;
-       
+      Bossmusic.Stop();
+        Normal.Play();
     }
 
     void Update()
@@ -49,8 +58,17 @@ public class Spawner : MonoBehaviour
     
     private IEnumerator Below50()
     {
-        
+        Normal.Stop();
         below50.enabled = true;
+        if (!Spawner.didChangeWater)
+        {
+            waterMesh.material = scaryMaterial;
+            Spawner.didChangeWater = true;
+        }
+       
+            Bossmusic.Play(2);
+            
+        
         Notecript[] holder = FindObjectsByType<Notecript>(FindObjectsSortMode.None);
         foreach (Notecript note in holder)
         {
@@ -64,7 +82,7 @@ public class Spawner : MonoBehaviour
             Destroy(note.gameObject);
         }
         
-        Move.Movemnetspeed = 15;
-       
+        Move.Movemnetspeed = 40;
+        MaxSpawnInterval = 2;
     }
 }

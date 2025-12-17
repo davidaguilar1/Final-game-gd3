@@ -8,7 +8,7 @@ public class Notecript : MonoBehaviour
 
     public TMP_Text Health;
    
-    public float Movemnetspeed = 5;
+    public float Movemnetspeed = 10;
   
     public bool IsDestroyed = false;
     
@@ -30,12 +30,13 @@ public class Notecript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Note"))
         {
             IsDestroyed = true;
             Destroy(gameObject);
             health.Points -= 1;
             Combo.Score += 1;
         }
+        
     }
 }
