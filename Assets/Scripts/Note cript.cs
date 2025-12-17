@@ -1,7 +1,6 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SocialPlatforms.Impl;
+
 
 public class Notecript : MonoBehaviour
 {

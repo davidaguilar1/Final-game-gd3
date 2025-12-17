@@ -1,4 +1,4 @@
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
 
 public class Playermovments : MonoBehaviour
@@ -17,16 +17,7 @@ public class Playermovments : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-             if (gameObject.CompareTag("Note"))
-             {
-            Debug.Log("attack");
-                Destroy(Note);
-             }
-        
-
-    }
+    
     // Update is called once per frame
     void Update()
     {

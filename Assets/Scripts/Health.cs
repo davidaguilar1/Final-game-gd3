@@ -3,9 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine.UI;
-using Unity.Burst.Intrinsics;
 public class Health : MonoBehaviour
 {
 
@@ -33,14 +31,7 @@ public class Health : MonoBehaviour
         Healthy.text = "HP: " + Mathf.Round(Points).ToString();
         Combotext.text = "Combo " + Mathf.Round(Score).ToString();
         slider.value = Points/ 100f;
-        if(Score >= HighCombo)
-        {
-            HighCombo = Score;
-        }
-       else if (Score == 0)
-        {
-            HighCombo = HighCombo;
-        }
+       
        
         if(Points == 0)
         {

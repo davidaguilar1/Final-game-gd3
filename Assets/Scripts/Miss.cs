@@ -23,7 +23,7 @@ public class Miss : MonoBehaviour
        PlayHP.PlayerHealthPoints -= 1;
         
         Combos.Score = 0;
-        Destroy(Note);
+       
         
     }
 }
