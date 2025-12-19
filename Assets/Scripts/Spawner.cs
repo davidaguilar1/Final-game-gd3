@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
-using UnityEditor.SearchService;
 
 
 public class Spawner : MonoBehaviour
