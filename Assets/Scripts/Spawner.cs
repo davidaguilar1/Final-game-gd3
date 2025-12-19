@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.SearchService;
 
 
 public class Spawner : MonoBehaviour
@@ -13,6 +14,7 @@ public class Spawner : MonoBehaviour
     public GameObject Square;
     public Health HP;
     public Notecript Move;
+    public PlayerHealth PlayerHP;
     public float timer = 0f;
     private float MaxSpawnInterval = 4f;
     private float MinSpawnInterval = 0f;
@@ -30,11 +32,12 @@ public class Spawner : MonoBehaviour
     {
         
         HP = FindAnyObjectByType<Health>();
+        PlayerHP = FindAnyObjectByType<PlayerHealth>();
         SpawnRate = Random.Range(MinSpawnInterval, MaxSpawnInterval);
         below50.enabled = false;
-    
-      Bossmusic.Stop();
+        Bossmusic.Stop();
         Normal.Play();
+        
     }
 
     void Update()
@@ -47,15 +50,32 @@ public class Spawner : MonoBehaviour
             Instantiate(Square, transform.position, transform.rotation, transform);
             SpawnRate = Random.Range(MinSpawnInterval, MaxSpawnInterval);
         }
-        if( HP.Points <= 50 && !hasRunBelow50)
+        if( HP.Points <= 100 && !hasRunBelow50)
         {
             Debug.Log("Below 50");
             StartCoroutine(Below50());
             hasRunBelow50 = true;
         }
-       
+        if (PlayerHP.PlayerHealthPoints == 0)
+        {
+            StartCoroutine(gameOver());
+        }
     }
-    
+    private IEnumerator gameOver()
+    {
+        Debug.Log("Game Over");
+        PlayerHP.GameOverText.enabled = true;
+        Normal.Stop(); Bossmusic.Stop();
+        Notecript[] holder = FindObjectsByType<Notecript>(FindObjectsSortMode.None);
+        foreach (Notecript note in holder)
+        {
+            note.gameObject.SetActive(false);
+        }
+       
+       
+        yield return new WaitForSeconds(3);
+        PlayerHP.DidLose = true;
+    }
     private IEnumerator Below50()
     {
         Normal.Stop();
@@ -82,7 +102,7 @@ public class Spawner : MonoBehaviour
             Destroy(note.gameObject);
         }
         
-        Move.Movementspeed = 40;
-        MaxSpawnInterval = 2;
+        Move.Movementspeed = 50;
+        MaxSpawnInterval = 3;
     }
 }

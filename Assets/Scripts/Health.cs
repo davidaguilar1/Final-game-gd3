@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
     {
         IsWin = false;
         slider.value = Points;
-        Points = 100;
+        Points = 200;
         Score= 0;
        
     }
@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
     {
         Healthy.text = "HP: " + Mathf.Round(Points).ToString();
         Combotext.text = "Combo " + Mathf.Round(Score).ToString();
-        slider.value = Points/ 100f;
+        slider.value = Points / 200f;
        
        
         if(Points == 0)
